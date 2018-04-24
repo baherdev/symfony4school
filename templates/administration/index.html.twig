@@ -1,0 +1,19 @@
+<h1> Hi this is a title</h1>
+{# This is variable#}
+
+{#Foreach structure#}
+
+{% for item in departement   %}
+  <li>{{item}}</li>
+{% endfor %}  
+
+{#If condition#}
+
+{% if teacher_connected == TRUE %}
+  <p>Hello Teacher {{ name|upper }}, you are now connected </p>
+
+{% else %}
+
+<p> {{ 'Access is not allowed'|upper }} {{"now"|date("d/m/Y")}} </p>  
+
+{% endif %}
