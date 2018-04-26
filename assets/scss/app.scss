@@ -1,0 +1,13 @@
+body{
+	font-family: Trebuchet MS;
+}
+
+h1{
+	span{
+		&.page-title{
+			size: 25px;
+			color: orange;
+			font-weight: 700;
+		}
+	}
+}

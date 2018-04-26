@@ -1,19 +1,29 @@
-<h1> Hi this is a title</h1>
-{# This is variable#}
+  {% extends 'layout.html.twig' %}
 
-{#Foreach structure#}
+  {% block current_page %} | Index page {% endblock %}
 
-{% for item in departement   %}
-  <li>{{item}}</li>
-{% endfor %}  
+  {% block content %}
+    <h1> <span class="page-title"> Main page Teacher </span></h1>
+    {# This is variable#}
 
-{#If condition#}
+    {#Foreach structure#}
 
-{% if teacher_connected == TRUE %}
-  <p>Hello Teacher {{ name|upper }}, you are now connected </p>
+    {% for item in departement   %}
+      <li>{{item}}</li>
+    {% endfor %}  
 
-{% else %}
+    {#If condition#}
 
-<p> {{ 'Access is not allowed'|upper }} {{"now"|date("d/m/Y")}} </p>  
+    {% if teacher_connected == TRUE %}
+      <p>Hello Teacher {{ name|upper }}, you are now connected </p>
 
-{% endif %}
+    {% else %}
+
+    <p> {{ 'Access is not allowed'|upper }} {{"now"|date("d/m/Y")}} </p>  
+
+    {% endif %}
+
+    <form>
+      {{ include('form_personal_data.html.twig')}}
+    </form>
+  {% endblock %} 
