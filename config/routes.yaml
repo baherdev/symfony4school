@@ -1,3 +1,12 @@
-index:
-   path: /
-   controller: App\Controller\DefaultController::index
+# index:
+#    path: /{teacher}
+#    controller: App\Controller\DefaultController::index
+#    defaults:
+#     teacher: 'Teacher'
+
+school_grade_detail:
+  path: /grade/{section}/{grade}
+  controller: App\Controller\GradeController::detail
+  requirements:
+    grade: \d{1}
+    section: "[a-zA-Z]+"

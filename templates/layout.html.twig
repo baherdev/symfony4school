@@ -1,14 +1,58 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{ asset('build/css/app.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css"  />
     <title>School Manager {% block current_page %} {% endblock %}</title>
 
-  </head>
-  <body>
-    {% block content %}
+    {% block stylesheets %}
 
-    {% endblock %}  
+
+    {% endblock %}
+
+  </head>
+
+  <body>
+    <header>
+      <div  class="grid-container" >
+        <div  class="grid-x grid-margin-x">
+          <div class="logo cell small-6">School Manager</div>
+          <div class="user-account-url cell small-6">
+
+          </div>
+        </div>
+        <nav aria-label="You are here:" role="navigation">
+
+        </nav>
+
+      </div>
+    </header>
+    <section>
+      <div  class="grid-container" >
+        <div  class="grid-x grid-margin-x">
+          <div id="header">
+   
+          </div>
+
+          <div id="content">
+            {% block content %}
+
+            {% endblock %} 
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <footer>
+
+    </footer>  
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>
+    {% block javascripts %}
+
+    {% endblock %}
 
   </body>
 </html>

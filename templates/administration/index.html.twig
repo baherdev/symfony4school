@@ -1,29 +1,25 @@
   {% extends 'layout.html.twig' %}
 
   {% block current_page %} | Index page {% endblock %}
-
   {% block content %}
-    <h1> <span class="page-title"> Main page Teacher </span></h1>
-    {# This is variable#}
 
-    {#Foreach structure#}
+    <h1>Hello Admin {{ name }}!</h1>
+    
+    <div class="grid-container fluid">
+        <div class="grid-x grid-margin-x">        
+           <div class="admin-front-block cell small-12 medium-4"> <span><a href="">Student</a> </span>
+           </div>
+          <div class="admin-front-block cell small-12 medium-4">  <span><a href="">Teacher</a> </span>
+           </div> 
+          <div class="admin-front-block cell small-12 medium-4">  <span><a href="">Admin</a> </span>
+           </div>               
+          <div class="admin-front-block cell small-12 medium-4">  <span><a href="">Course</a> </span>
+          </div>
+          <div class="admin-front-block cell small-12 medium-4">  <span><a href="">Grade</a> </span>         
+           </div>
+         </div>
+    </div>
 
-    {% for item in departement   %}
-      <li>{{item}}</li>
-    {% endfor %}  
+  {% endblock %}
 
-    {#If condition#}
 
-    {% if teacher_connected == TRUE %}
-      <p>Hello Teacher {{ name|upper }}, you are now connected </p>
-
-    {% else %}
-
-    <p> {{ 'Access is not allowed'|upper }} {{"now"|date("d/m/Y")}} </p>  
-
-    {% endif %}
-
-    <form>
-      {{ include('form_personal_data.html.twig')}}
-    </form>
-  {% endblock %} 
