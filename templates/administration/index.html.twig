@@ -4,7 +4,14 @@
   {% block content %}
 
     <h1>Hello Admin {{ name }}!</h1>
-    
+    {% for user_flash in app.flashes('user_connected')  %}
+      <div data-closable class="alert-box callout success">
+          <i class="fa fa-check"></i> {{ user_flash }}
+          <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+            <span aria-hidden="true">&CircleTimes;</span>
+          </button>
+      </div>
+    {% endfor %}
     <div class="grid-container fluid">
         <div class="grid-x grid-margin-x">        
            <div class="admin-front-block cell small-12 medium-4"> <span><a href="">Student</a> </span>
