@@ -38,7 +38,7 @@ class DefaultController extends AbstractController
 
     $host = $request->headers->get('host');
 
-
+    echo $host;
 
     $departement = array('1'=>'IT','2'=>'Electro','3'=>'Mecanique' );
 

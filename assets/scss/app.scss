@@ -27,6 +27,7 @@ h1{
 .student-front-block span,.teacher-front-block span,.admin-front-block span {
   display: inline-block;
   vertical-align: middle;
+  line-height: normal;
 }
 
 .student-front-block:hover,.teacher-front-block:hover,.admin-front-block:hover {
