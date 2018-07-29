@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection; 
+use Doctrine\Common\Collections\Collection; 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -26,6 +28,15 @@ class Grade
      */
     private $year;
 
+    /** 
+     * @ORM\ManyToMany(targetEntity="App\Entity\Course", inversedBy="grades") 
+     */ 
+    private $course; 
+ 
+    public function __construct() 
+    { 
+        $this->course = new ArrayCollection(); 
+    } 
     public function getId()
     {
         return $this->id;
@@ -54,4 +65,30 @@ class Grade
 
         return $this;
     }
+    
+    /** 
+    * @return Collection|Course[] 
+    */ 
+    public function getCourse(): Collection 
+    { 
+        return $this->course; 
+    } 
+ 
+    public function addCourse(Course $course): self 
+    { 
+        if (!$this->course->contains($course)) { 
+            $this->course[] = $course; 
+        } 
+ 
+        return $this; 
+    } 
+ 
+    public function removeCourse(Course $course): self 
+    { 
+        if ($this->course->contains($course)) { 
+            $this->course->removeElement($course); 
+        } 
+ 
+        return $this; 
+    } 
 }
