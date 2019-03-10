@@ -10,3 +10,6 @@ school_grade_detail:
   requirements:
     grade: \d{1}
     section: "[a-zA-Z]+"
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

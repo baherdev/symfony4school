@@ -1,6 +1,9 @@
 framework:
     secret: '%env(APP_SECRET)%'
-    #default_locale: en
+    default_locale: 'en'
+    translator: ~
+    templating:
+        engines: ['twig','php']
     #csrf_protection: ~
     #http_method_override: true
 

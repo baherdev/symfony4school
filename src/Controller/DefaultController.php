@@ -12,11 +12,10 @@ class DefaultController extends AbstractController
 {
 
   /**
-   * @Route("/{teacher}", name="index", defaults={"teacher"="Teacher"}, requirements={"teacher"="[a-zA-Z]+"})
+   * @Route("/user/{teacher}", name="index", defaults={"teacher"="Teacher"}, requirements={"teacher"="[a-zA-Z]+"})
    */
 
 	public function index($teacher, Request $request, SessionInterface $session){
-
     $session->set('user_connexion','connected');
 
     $teacher_conntected = $request->query->get('connected');
@@ -37,8 +36,6 @@ class DefaultController extends AbstractController
     $first_name = $request->request->get('first_name');
 
     $host = $request->headers->get('host');
-
-
 
     $departement = array('1'=>'IT','2'=>'Electro','3'=>'Mecanique' );
 
