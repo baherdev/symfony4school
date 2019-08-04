@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig' %}
+
+
+
+{% block body %}
+
+
+
+<h3>Formulaire Ajout nouvelle Classe</h3>
+
+<div class="well">
+  
+  {{ form_start(form) }}
+    {{ form_row(form.title) }}
+    {{ form_row(form.year) }}
+    {{ form_row(form.course) }}
+  {{ form_end(form) }}
+</div>
+
+
+{% endblock %}
